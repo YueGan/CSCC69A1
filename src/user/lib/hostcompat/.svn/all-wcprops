@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/teaching/course-36913s/!svn/ver/33/assignments/a1/starter-code/src/user/lib/hostcompat
+END
+time.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/hostcompat/time.c
+END
+hostcompat.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/hostcompat/hostcompat.c
+END
+hostcompat.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/hostcompat/hostcompat.h
+END
+err.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/hostcompat/err.c
+END
+host-err.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/hostcompat/host-err.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/hostcompat/Makefile
+END

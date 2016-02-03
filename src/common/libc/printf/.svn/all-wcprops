@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/printf
+END
+__printf.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/printf/__printf.c
+END
+snprintf.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/printf/snprintf.c
+END

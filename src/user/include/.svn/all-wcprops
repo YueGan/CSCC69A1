@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include
+END
+signal.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/signal.h
+END
+time.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/time.h
+END
+stdlib.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/stdlib.h
+END
+assert.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/assert.h
+END
+limits.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/limits.h
+END
+stdio.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/stdio.h
+END
+setjmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/setjmp.h
+END
+stdarg.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/stdarg.h
+END
+errno.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/errno.h
+END
+stdint.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/stdint.h
+END
+fcntl.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/fcntl.h
+END
+string.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/string.h
+END
+unistd.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/unistd.h
+END
+err.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/err.h
+END

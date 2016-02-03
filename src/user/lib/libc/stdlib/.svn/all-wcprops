@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/libc/stdlib
+END
+random.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/libc/stdlib/random.c
+END
+system.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/libc/stdlib/system.c
+END
+abort.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/libc/stdlib/abort.c
+END
+malloc.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/libc/stdlib/malloc.c
+END
+exit.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/libc/stdlib/exit.c
+END

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/include
+END
+specialreg.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/include/specialreg.h
+END
+tlb.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/include/tlb.h
+END
+trapframe.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/include/trapframe.h
+END
+current.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/include/current.h
+END
+spinlock.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/include/spinlock.h
+END
+vm.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/include/vm.h
+END
+types.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/include/types.h
+END
+elf.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/include/elf.h
+END
+thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/include/thread.h
+END

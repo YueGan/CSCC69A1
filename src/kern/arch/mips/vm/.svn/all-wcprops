@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/vm
+END
+ram.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/vm/ram.c
+END
+tlb-mips1.S
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/vm/tlb-mips1.S
+END
+dumbvm.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/vm/dumbvm.c
+END

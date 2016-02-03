@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/teaching/course-36913s/!svn/ver/33/assignments/a1/starter-code/src/user/testbin/f_test
+END
+f_write.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/testbin/f_test/f_write.c
+END
+f_read.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/testbin/f_test/f_read.c
+END
+f_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/testbin/f_test/f_test.c
+END
+f_hdr.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/testbin/f_test/f_hdr.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/testbin/f_test/Makefile
+END

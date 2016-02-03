@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall
+END
+sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/sync.html
+END
+symlink.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/symlink.html
+END
+reboot.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/reboot.html
+END
+write.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/write.html
+END
+ftruncate.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/ftruncate.html
+END
+__time.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/__time.html
+END
+sbrk.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/sbrk.html
+END
+lseek.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/lseek.html
+END
+rename.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/rename.html
+END
+dup2.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/dup2.html
+END
+ioctl.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/ioctl.html
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/Makefile
+END
+execv.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/execv.html
+END
+__getcwd.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/__getcwd.html
+END
+getpid.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/getpid.html
+END
+rmdir.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/rmdir.html
+END
+fstat.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/fstat.html
+END
+fsync.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/fsync.html
+END
+errno.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/errno.html
+END
+lstat.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/lstat.html
+END
+readlink.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/readlink.html
+END
+chdir.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/chdir.html
+END
+link.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/link.html
+END
+remove.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/remove.html
+END
+pipe.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/pipe.html
+END
+getdirentry.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/getdirentry.html
+END
+fork.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/fork.html
+END
+open.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/open.html
+END
+waitpid.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/waitpid.html
+END
+close.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/close.html
+END
+mkdir.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/mkdir.html
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/index.html
+END
+_exit.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/_exit.html
+END
+read.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/read.html
+END
+stat.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/man/syscall/stat.html
+END

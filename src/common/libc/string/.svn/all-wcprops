@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/string
+END
+strcat.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/string/strcat.c
+END
+bzero.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/string/bzero.c
+END
+strcpy.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/string/strcpy.c
+END
+memmove.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/string/memmove.c
+END
+strchr.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/string/strchr.c
+END
+strlen.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/string/strlen.c
+END
+strrchr.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/string/strrchr.c
+END
+strtok_r.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/string/strtok_r.c
+END
+strcmp.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/string/strcmp.c
+END
+memcpy.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/common/libc/string/memcpy.c
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/locore
+END
+cache-mips161.S
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/locore/cache-mips161.S
+END
+exception-mips1.S
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/locore/exception-mips1.S
+END
+trap.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/arch/mips/locore/trap.c
+END

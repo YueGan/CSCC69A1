@@ -1,0 +1,86 @@
+10
+
+dir
+170
+https://drproject.cdf.toronto.edu/svn/teaching/course-36913s/assignments/a1/starter-code/src/man
+https://drproject.cdf.toronto.edu/svn/teaching/course-36913s
+
+
+
+2013-01-07T04:00:26.895713Z
+1
+demke
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a995efeb-42ea-410e-8c62-157c625560da
+
+bin
+dir
+
+testbin
+dir
+
+libc
+dir
+
+syscall
+dir
+
+toplevel
+dir
+
+misc
+dir
+
+sbin
+dir
+
+Makefile
+file
+
+
+
+
+2013-05-06T16:03:05.001018Z
+8a20b01ed1e634437efc912d2534e1c2
+2013-01-07T04:00:26.895713Z
+1
+demke
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+183
+
+dev
+dir
+

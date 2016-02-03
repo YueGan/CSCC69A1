@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/vfs
+END
+device.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/vfs/device.c
+END
+vfslookup.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/vfs/vfslookup.c
+END
+devnull.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/vfs/devnull.c
+END
+vfslist.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/vfs/vfslist.c
+END
+vfspath.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/vfs/vfspath.c
+END
+vnode.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/vfs/vnode.c
+END
+vfscwd.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/vfs/vfscwd.c
+END

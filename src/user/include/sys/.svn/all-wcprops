@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/sys
+END
+ioctl.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/sys/ioctl.h
+END
+null.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/sys/null.h
+END
+reboot.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/sys/reboot.h
+END
+stat.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/sys/stat.h
+END
+endian.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/sys/endian.h
+END
+types.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/sys/types.h
+END
+wait.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/include/sys/wait.h
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/libc/unix
+END
+__assert.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/libc/unix/__assert.c
+END
+errno.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/libc/unix/errno.c
+END
+err.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/libc/unix/err.c
+END
+getcwd.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/lib/libc/unix/getcwd.c
+END

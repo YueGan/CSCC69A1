@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/33/assignments/a1/starter-code/src/user/testbin/randcall
+END
+gencalls.sh
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/testbin/randcall/gencalls.sh
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/testbin/randcall/main.c
+END
+callspecs.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/testbin/randcall/callspecs.txt
+END
+extern.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/testbin/randcall/extern.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/user/testbin/randcall/Makefile
+END

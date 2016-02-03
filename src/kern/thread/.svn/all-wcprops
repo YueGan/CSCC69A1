@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/teaching/course-36913s/!svn/ver/32/assignments/a1/starter-code/src/kern/thread
+END
+spl.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/thread/spl.c
+END
+spinlock.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/thread/spinlock.c
+END
+threadlist.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/thread/threadlist.c
+END
+synch.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/thread/synch.c
+END
+thread.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/teaching/course-36913s/!svn/ver/27/assignments/a1/starter-code/src/kern/thread/thread.c
+END
+clock.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/thread/clock.c
+END
+pid.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/teaching/course-36913s/!svn/ver/32/assignments/a1/starter-code/src/kern/thread/pid.c
+END

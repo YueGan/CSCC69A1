@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/lib
+END
+array.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/lib/array.c
+END
+misc.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/lib/misc.c
+END
+bitmap.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/lib/bitmap.c
+END
+bswap.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/lib/bswap.c
+END
+uio.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/lib/uio.c
+END
+kgets.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/lib/kgets.c
+END
+kprintf.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/teaching/course-36913s/!svn/ver/1/assignments/a1/starter-code/src/kern/lib/kprintf.c
+END
