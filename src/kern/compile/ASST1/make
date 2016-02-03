@@ -1,0 +1,7 @@
+!#/bin/sh
+
+bmake
+bmake install
+cd ../../..
+bmake
+bmake install
