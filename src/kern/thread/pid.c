@@ -317,8 +317,18 @@ pid_detach(pid_t childpid)
 	(void)childpid;
 	
 	// Implement me
-	KASSERT(false);
-	return EUNIMP;
+	
+	// ESRCH: No thread could be found corresponding to that specified by childpid.
+	// EINVAL: The thread childpid is already in the detached state.
+	// EINVAL: The caller is not the parent of childpid.
+	// EINVAL: childpid is INVALID_PID or BOOTUP_PID.
+	if(childpid == INVALID_PID || childpid == BOOTUP_PID){
+		return EINVAL;
+	}
+
+	// On success
+	return 0;
+	//return EUNIMP;
 }
 
 /*
@@ -361,6 +371,17 @@ pid_join(pid_t targetpid, int *status, int flags)
 	(void)flags;
 	
 	// Implement me.
-	KASSERT(false);
+	
+
+	// ESRCH: No thread could be found corresponding to that specified by targetpid.
+	// EINVAL: The thread corresponding to targetpid has been detached.
+	// EINVAL: targetpid is INVALID_PID or BOOTUP_PID.
+	if(targetpid == INVALID_PID || targetpid == BOOTUP_PID){
+		return EINVAL;
+	}
+
+	// EDEADLK: The targetpid argument refers to the calling thread. (You will need to add this error to errno.h, and a corresponding message to errmsg.h)
+	
+	// Should return joined pid
 	return EUNIMP;
 }
