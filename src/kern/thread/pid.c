@@ -366,22 +366,49 @@ pid_exit(int status, bool dodetach)
 int
 pid_join(pid_t targetpid, int *status, int flags)
 {
-	(void)targetpid;
-	(void)status;
-	(void)flags;
-	
-	// Implement me.
-	
 
-	// ESRCH: No thread could be found corresponding to that specified by targetpid.
-	// EINVAL: The thread corresponding to targetpid has been detached.
+	
 	// EINVAL: targetpid is INVALID_PID or BOOTUP_PID.
 	if(targetpid == INVALID_PID || targetpid == BOOTUP_PID){
+		lock_release(pidlock);
 		return EINVAL;
 	}
 
-	// EDEADLK: The targetpid argument refers to the calling thread. (You will need to add this error to errno.h, and a corresponding message to errmsg.h)
+
+	// Get the pid info for the target pid
+	struct pidinfo *target_pid;
+	target_pid = pi_get(targetpid);
+	// Lock acquired
+	lock_acquire(pidlock);
+
+
+	// ESRCH: No thread could be found corresponding to that specified by targetpid.
+	if(target_pid == NULL){
+		lock_release(pidlock);
+		return ESRCH;
+	}
+
+	// EINVAL: The thread corresponding to targetpid has been detached.
+	if (target_pid->pi_ppid == INVALID_PID){
+		lock_release(pidlock);
+		return EINVAL;
+	}
+
+
+
+	// Status is a valid pointer
+	if (status == NULL){
+		lock_release(pidlock);
+		return ESRCH;
+	}
 	
+	// Set status to target pid's exit status
+	*status = target_pid->pi_exitstatus; 
+
+
+	// EDEADLK: The targetpid argument refers to the calling thread. (You will need to add this error to errno.h, and a corresponding message to errmsg.h)
+
+	lock_release(pidlock);
 	// Should return joined pid
-	return EUNIMP;
+	return targetpid;
 }
