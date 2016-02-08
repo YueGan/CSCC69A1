@@ -129,19 +129,19 @@ cmd_progthread(void *ptr, unsigned long nargs)
 	int result;
 
 	KASSERT(nargs >= 1);
-
-	if (nargs > 2) {
-		kprintf("Warning: argument passing from menu not supported\n");
-	}
-
+//remove warning message, we are going to now support arg passing
+//	if (nargs > 2) {
+//		kprintf("Warning: argument passing from menu not supported\n");
+//	}
 	/* Hope we fit. */
 	KASSERT(strlen(args[0]) < sizeof(progname));
 
 	strcpy(progname, args[0]);
 	strcpy(progname2,args[0]); /* demke: make extra copy for runprogram */
-	free_args(nargs, args);
+//stop arg freeing and pass to run program to use.
+//	free_args(nargs, args);
 
-	result = runprogram(progname2);
+	result = runprogram(progname2, args, nargs);
 	if (result) {
 		kprintf("Running program %s failed: %s\n", progname,
 			strerror(result));

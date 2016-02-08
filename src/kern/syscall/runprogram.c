@@ -44,6 +44,7 @@
 #include <vfs.h>
 #include <syscall.h>
 #include <test.h>
+#include <copyinout.h>
 
 /*
  * Load program "progname" and start running it in usermode.
@@ -52,11 +53,20 @@
  * Calls vfs_open on progname and thus may destroy it.
  */
 int
-runprogram(char *progname)
+runprogram(char *progname, char **args, unsigned long nargs)
 {
 	struct vnode *v;
 	vaddr_t entrypoint, stackptr;
-	int result;
+	int result, len, flen;//len used for finding argument length for padding, flen is final length after padding
+	size_t maxlen = 0;
+	vaddr_t argptrs[nargs+1];//pointers to stack addresses of arguments copied out. argptrs[0] stores vaddr_t
+	//of argument 0.
+	//find maximum arg length
+	for (int i = 0; i < (int)nargs; i++){
+		if (strlen(args[i]) > maxlen)
+			maxlen = strlen(args[i]);
+	}
+	char arg[maxlen];//argument to send to copyout after terminated and padded
 
 	/* Open the file. */
 	result = vfs_open(progname, O_RDONLY, 0, &v);
@@ -94,9 +104,51 @@ runprogram(char *progname)
 		/* thread_exit destroys curthread->t_addrspace */
 		return result;
 	}
+	argptrs[nargs] = '\0';//null terminate the final arg pointer
+	args[nargs] = '\0';//null terminate the arguments
+//	stack grows to lower addresses. Start by adding final argument, decreasing stack pointer and adding
+//	second to last arg, etc.
+	for (int i = (int)nargs - 1; i >= 0; i--) {
+//Find length of current argument, add 1 for null terminate and pad result to a multiple of 4
+		len = strlen(args[i])+1;
+		if (len % 4){//if len not divisible by 4
+			flen = len + (4 - (len % 4));//len%4 is extra remainder. 4-remainder takes it to next mult of 4
+		}
+		else{
+			flen = len;
+		}
+//		kprintf("arg: %s len: %d flen %d", args[i], len, flen);
+//create space for this argument, copy the arg, null terminate
+		//arg = kmalloc((sizeof(char))*flen);
+		for (int j = 0; j < len; j++){//copy arg as is, up to length of arg.
+			arg[j] = args[i][j];
+		}
+		for (int j = len; j < flen; j++){//for final byte+padding, set to null for remaining len->flen spaces
+			arg[j] = '\0';
+		}
+	//	move stackptr to accomodate the length of argument
+		stackptr -= flen;
+		argptrs[i] = stackptr;
+	//	kprintf("%d\t", stackptr);
+	//	kprintf("copying %s\n", arg);
+	//	copy the arg to stackptr now that we've moved it to have enough room
+		copyout(arg, (userptr_t)stackptr, (size_t)flen);
+		//kfree(arg);//free argument before next iteration of arg copying
+
+	}
+	len = sizeof(argptrs);//make room and pad argument pointer array
+	if (len % 4){
+		flen = len + (4 - (len % 4));
+	}
+	else{
+		flen = len;
+	}
+	stackptr -= flen;
+	copyout(argptrs, (userptr_t)stackptr, (size_t)flen);
+
 
 	/* Warp to user mode. */
-	enter_new_process(0 /*argc*/, NULL /*userspace addr of argv*/,
+	enter_new_process(nargs /*argc*/, (userptr_t)stackptr /*userspace addr of argv*/,
 			  stackptr, entrypoint);
 	
 	/* enter_new_process does not return. */
