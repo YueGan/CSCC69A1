@@ -576,6 +576,9 @@ thread_fork(const char *name,
 	if (ret != NULL) {
 		*ret = newthread->t_pid;
 	}
+	else{
+		pid_detach(newthread->t_pid);
+	}
 
 	return 0;
 }
@@ -831,9 +834,14 @@ void
 thread_exit(int exitcode)
 {
 	struct thread *cur;
-        (void)exitcode;  // suppress warning until code gets written
+    bool dodetach;
 
 	cur = curthread;
+
+	// If current thread is not NULL, it is in user space
+	if(cur->t_addrspace != NULL){
+		dodetach = true;
+	}
 
 	/* VFS fields */
 	if (cur->t_cwd) {
@@ -841,6 +849,7 @@ thread_exit(int exitcode)
 		cur->t_cwd = NULL;
 	}
 
+	pid_exit(exitcode, dodetach);
 	/* VM fields */
 	if (cur->t_addrspace) {
 		/*
