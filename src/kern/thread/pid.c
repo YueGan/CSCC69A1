@@ -449,7 +449,6 @@ pid_join(pid_t targetpid, int *status, int flags)
 
 	// EINVAL: The thread corresponding to targetpid has been detached.
 	if (target_pid->pi_ppid == INVALID_PID){
-		kprintf("IMHERERHEHRHERHE(RHEIORH");
 		lock_release(pidlock);
 		return -EINVAL;
 	}
