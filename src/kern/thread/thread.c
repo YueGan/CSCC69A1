@@ -506,14 +506,14 @@ thread_fork(const char *name,
 
 	newthread = thread_create(name);
 	if (newthread == NULL) {
-		return ENOMEM;
+		return -ENOMEM;
 	}
 
 	/* Allocate a stack */
 	newthread->t_stack = kmalloc(STACK_SIZE);
 	if (newthread->t_stack == NULL) {
 		thread_destroy(newthread);
-		return ENOMEM;
+		return -ENOMEM;
 	}
 	thread_checkstack_init(newthread);
 
@@ -530,7 +530,7 @@ thread_fork(const char *name,
 		if (result) {
  			pid_unalloc(newthread->t_pid); 
 			thread_destroy(newthread);
- 			return ENOMEM;
+ 			return -ENOMEM;
 		}
 	}
 	

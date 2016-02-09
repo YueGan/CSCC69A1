@@ -321,10 +321,11 @@ pid_detach(pid_t childpid)
 	lock_acquire(pidlock);
 	
 	// EINVAL: childpid is INVALID_PID or BOOTUP_PID.
-	if(childpid == INVALID_PID || childpid == BOOTUP_PID){
+	if(childpid == INVALID_PID || childpid == BOOTUP_PID || childpid < PID_MIN){
 		lock_release(pidlock);
 		return -EINVAL;
 	}
+	
 	// Get the pid info for the child pid
 	struct pidinfo *child_pid;
 	child_pid = pi_get(childpid);
@@ -350,7 +351,7 @@ pid_detach(pid_t childpid)
 
 	// If child has exit when pid_detach has been called, then call drop function
 	// to remove pidinfo and free its space.
-	if(child_pid->pi_exited){
+	if(child_pid->pi_exited == true){
 		pi_drop(childpid);
 	}
 	else{
@@ -389,7 +390,7 @@ pid_exit(int status, bool dodetach)
 
 	// If dodetach is true, then we detach every child of this process
 	if(dodetach == true){
-		for(int i = 0; i <= PROCS_MAX; i++){ 
+		for(int i =PID_MIN; i < PID_MAX; i++){ 
 			struct pidinfo *this_pid = pi_get((pid_t)i);
 			if(this_pid != NULL && this_pid->pi_ppid == my_pi->pi_pid){
 				lock_release(pidlock);
@@ -401,17 +402,16 @@ pid_exit(int status, bool dodetach)
 		}
 	}
 
-	// if the pid we called is being detached, then we clear it in the 
-	// pid list
-	
+	// tell the waiting thread about the exit status
 	cv_broadcast(my_pi->pi_cv, pidlock); 
 
+	// if the pid we called is being detached, then we clear it in the 
+	// pid list
 	if(my_pi->detached){
 		my_pi->pi_ppid = INVALID_PID;
-		pi_drop(my_pi->pi_pid); 
+		pi_drop(my_pi->pi_pid);
 	}
 	
-	// tell the waiting thread about the exit status
 
 
 	lock_release(pidlock);
@@ -432,17 +432,13 @@ pid_join(pid_t targetpid, int *status, int flags)
 	lock_acquire(pidlock);
 	
 	// EINVAL: targetpid is INVALID_PID or BOOTUP_PID.
-	if(targetpid == INVALID_PID || targetpid == BOOTUP_PID){
+	if(targetpid == INVALID_PID || targetpid == BOOTUP_PID || targetpid < PID_MIN || targetpid > PID_MAX){
 		lock_release(pidlock);
 		return -EINVAL;
 	}
 
-
 	// Get the pid info for the target pid
-	struct pidinfo *target_pid;
-	target_pid = pi_get(targetpid);
-
-
+	struct pidinfo *target_pid = pi_get(targetpid);
 
 	// ESRCH: No thread could be found corresponding to that specified by targetpid.
 	if(target_pid == NULL){
@@ -453,6 +449,7 @@ pid_join(pid_t targetpid, int *status, int flags)
 
 	// EINVAL: The thread corresponding to targetpid has been detached.
 	if (target_pid->pi_ppid == INVALID_PID){
+		kprintf("IMHERERHEHRHERHE(RHEIORH");
 		lock_release(pidlock);
 		return -EINVAL;
 	}
@@ -468,7 +465,7 @@ pid_join(pid_t targetpid, int *status, int flags)
 	if(target_pid->pi_exited == false){
 
 		// Then if flag raise WNOHANG then return 
-		if(flags == WNOHANG){
+		if(flags != WNOHANG){
 			// *status = 0;
 			lock_release(pidlock);
 			return 0;	
@@ -478,7 +475,7 @@ pid_join(pid_t targetpid, int *status, int flags)
 		else{
 			cv_wait(target_pid->pi_cv, pidlock);
 			// keep it for now
-			KASSERT(target_pid->pi_exited == true);
+			//KASSERT(target_pid->pi_exited == true);
 		}
 	}
 
@@ -486,6 +483,8 @@ pid_join(pid_t targetpid, int *status, int flags)
 	// TO-DO check exited is true or not !!!!!!!!!!!!!!!
 	if (status != NULL){
 		*status = target_pid->pi_exitstatus;
+	}else{
+		return -EFAULT;
 	}
 
 
