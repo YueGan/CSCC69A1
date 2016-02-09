@@ -506,14 +506,14 @@ thread_fork(const char *name,
 
 	newthread = thread_create(name);
 	if (newthread == NULL) {
-		return ENOMEM;
+		return -ENOMEM;
 	}
 
 	/* Allocate a stack */
 	newthread->t_stack = kmalloc(STACK_SIZE);
 	if (newthread->t_stack == NULL) {
 		thread_destroy(newthread);
-		return ENOMEM;
+		return -ENOMEM;
 	}
 	thread_checkstack_init(newthread);
 
@@ -530,7 +530,7 @@ thread_fork(const char *name,
 		if (result) {
  			pid_unalloc(newthread->t_pid); 
 			thread_destroy(newthread);
- 			return ENOMEM;
+ 			return -ENOMEM;
 		}
 	}
 	
@@ -576,7 +576,11 @@ thread_fork(const char *name,
 	if (ret != NULL) {
 		*ret = newthread->t_pid;
 	}
-
+	/*
+	else{
+		pid_detach(newthread->t_pid);
+	}
+*/
 	return 0;
 }
 
@@ -831,15 +835,23 @@ void
 thread_exit(int exitcode)
 {
 	struct thread *cur;
-        (void)exitcode;  // suppress warning until code gets written
+    bool dodetach = false;
 
 	cur = curthread;
+
+	// If current thread is not NULL, it is in user space
+	if(cur->t_addrspace != NULL){
+		dodetach = true;
+	}
+
+	pid_exit(exitcode, dodetach);
 
 	/* VFS fields */
 	if (cur->t_cwd) {
 		VOP_DECREF(cur->t_cwd);
 		cur->t_cwd = NULL;
 	}
+
 
 	/* VM fields */
 	if (cur->t_addrspace) {
