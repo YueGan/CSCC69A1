@@ -56,6 +56,7 @@ struct pidinfo {
 	volatile bool pi_exited;	// true if thread has exited
 	int pi_exitstatus;		// status (only valid if exited)
 	struct cv *pi_cv;		// use to wait for thread exit
+	bool detached;
 };
 
 
@@ -343,7 +344,7 @@ pid_detach(pid_t childpid)
 
 	// EINVAL: The caller is not the parent of childpid.
 	if(child_pid->pi_ppid != curthread->t_pid){
-		lock_release(pidlock);
+		lock_release(pidlock); 
 		return -EINVAL;	
 	}
 
@@ -388,13 +389,13 @@ pid_exit(int status, bool dodetach)
 
 	// If dodetach is true, then we detach every child of this process
 	if(dodetach == true){
-		for(int i = PID_MIN; i < PID_MAX; i++){
+		for(int i = 0; i <= PROCS_MAX; i++){ 
 			struct pidinfo *this_pid = pi_get((pid_t)i);
 			if(this_pid != NULL && this_pid->pi_ppid == my_pi->pi_pid){
 				lock_release(pidlock);
 				pid_detach(this_pid->pi_pid);
 				// Set Parent pid to invalid after detach
-				this_pid->pi_ppid = INVALID_PID;
+				this_pid->detached = true;
 				lock_acquire(pidlock);
 			}
 		}
@@ -402,11 +403,16 @@ pid_exit(int status, bool dodetach)
 
 	// if the pid we called is being detached, then we clear it in the 
 	// pid list
-	if(my_pi->pi_ppid == INVALID_PID){
-		pi_drop(curthread->t_pid);
+	
+	cv_broadcast(my_pi->pi_cv, pidlock); 
+
+	if(my_pi->detached){
+		my_pi->pi_ppid = INVALID_PID;
+		pi_drop(my_pi->pi_pid); 
 	}
+	
 	// tell the waiting thread about the exit status
-	cv_broadcast(my_pi->pi_cv, pidlock);
+
 
 	lock_release(pidlock);
 }
@@ -420,6 +426,7 @@ pid_exit(int status, bool dodetach)
 int
 pid_join(pid_t targetpid, int *status, int flags)
 {
+
 
 	// Lock acquired
 	lock_acquire(pidlock);
@@ -439,6 +446,7 @@ pid_join(pid_t targetpid, int *status, int flags)
 
 	// ESRCH: No thread could be found corresponding to that specified by targetpid.
 	if(target_pid == NULL){
+
 		lock_release(pidlock);
 		return -ESRCH;
 	}
@@ -449,14 +457,19 @@ pid_join(pid_t targetpid, int *status, int flags)
 		return -EINVAL;
 	}
 
-	// Status is a invalid pointer
 
-	
+	// EDEADLK: The targetpid argument refers to the calling thread
+	if(targetpid == curthread->t_pid){
+		lock_release(pidlock); 
+		return -EDEADLK;
+	}
+
 	// If pid has not exit
 	if(target_pid->pi_exited == false){
 
 		// Then if flag raise WNOHANG then return 
 		if(flags == WNOHANG){
+			// *status = 0;
 			lock_release(pidlock);
 			return 0;	
 		}
@@ -464,21 +477,19 @@ pid_join(pid_t targetpid, int *status, int flags)
 		// Else it waits until it exits
 		else{
 			cv_wait(target_pid->pi_cv, pidlock);
+			// keep it for now
+			KASSERT(target_pid->pi_exited == true);
 		}
 	}
 
 	// If the targerpid has exited, set status to target pid's exit status
 	// TO-DO check exited is true or not !!!!!!!!!!!!!!!
 	if (status != NULL){
-		*status = target_pid->pi_exitstatus; 
+		*status = target_pid->pi_exitstatus;
 	}
 
 
-	// EDEADLK: The targetpid argument refers to the calling thread
-	if(targetpid == curthread->t_pid){
-		lock_release(pidlock);
-		return -EDEADLK;
-	}
+
 	lock_release(pidlock);
 	// Should return joined pid
 	return targetpid;

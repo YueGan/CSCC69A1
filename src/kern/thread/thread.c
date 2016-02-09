@@ -576,10 +576,11 @@ thread_fork(const char *name,
 	if (ret != NULL) {
 		*ret = newthread->t_pid;
 	}
+	/*
 	else{
 		pid_detach(newthread->t_pid);
 	}
-
+*/
 	return 0;
 }
 
@@ -834,7 +835,7 @@ void
 thread_exit(int exitcode)
 {
 	struct thread *cur;
-    bool dodetach;
+    bool dodetach = false;
 
 	cur = curthread;
 
@@ -843,13 +844,15 @@ thread_exit(int exitcode)
 		dodetach = true;
 	}
 
+	pid_exit(exitcode, dodetach);
+
 	/* VFS fields */
 	if (cur->t_cwd) {
 		VOP_DECREF(cur->t_cwd);
 		cur->t_cwd = NULL;
 	}
 
-	pid_exit(exitcode, dodetach);
+
 	/* VM fields */
 	if (cur->t_addrspace) {
 		/*
