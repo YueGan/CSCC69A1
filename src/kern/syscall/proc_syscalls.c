@@ -52,12 +52,23 @@ sys_fork(struct trapframe *tf, pid_t *retval)
  * Placeholder to remind you to implement this.
  */
 
+ int sys_getpid(void){
+
+ 	return curthread->t_pid;
+ }
 
 /*
  * sys_waitpid
  * Placeholder comment to remind you to implement this.
  */
 
+int sys_waitpid(pid_t targetpid, int *status, int flags){
+
+	// waitpid can only be called if the parent is calling on its children
+	target_parent(targetpid, sys_getpid());
+
+	return pid_join(targetpid, status, flags);
+}
 
 /*
  * sys_kill

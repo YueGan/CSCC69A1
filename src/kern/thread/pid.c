@@ -351,11 +351,10 @@ pid_detach(pid_t childpid)
 
 	// If child has exit when pid_detach has been called, then call drop function
 	// to remove pidinfo and free its space.
+	child_pid->pi_ppid = INVALID_PID;
+	child_pid->detached = true;
 	if(child_pid->pi_exited == true){
-		pi_drop(childpid);
-	}
-	else{
-		child_pid->pi_ppid = INVALID_PID;
+		pi_drop(child_pid->pi_pid);
 	}
 
 	lock_release(pidlock); 
@@ -377,7 +376,7 @@ pid_exit(int status, bool dodetach)
 {
 
 	// Lock aquired
-	lock_acquire(pidlock);
+	lock_acquire(pidlock); 
 
 	// Get the current thread pid
 	struct pidinfo *my_pi;
@@ -387,17 +386,17 @@ pid_exit(int status, bool dodetach)
 	// Set the current pid exit to true and set the exitstatus
 	my_pi->pi_exited = true;
 	my_pi->pi_exitstatus = status;
-
+	struct pidinfo *this_pid = NULL;
 	// If dodetach is true, then we detach every child of this process
-	if(dodetach == true){
+	if(dodetach){
 		for(int i =PID_MIN; i < PID_MAX; i++){ 
-			struct pidinfo *this_pid = pi_get((pid_t)i);
-			if(this_pid != NULL && this_pid->pi_ppid == my_pi->pi_pid){
+			this_pid = pi_get((pid_t)i);
+			if((this_pid != NULL) && (this_pid->pi_ppid == my_pi->pi_pid)){
 				lock_release(pidlock);
 				pid_detach(this_pid->pi_pid);
 				// Set Parent pid to invalid after detach
-				this_pid->detached = true;
 				lock_acquire(pidlock);
+				this_pid->detached = true;
 			}
 		}
 	}
@@ -411,8 +410,6 @@ pid_exit(int status, bool dodetach)
 		my_pi->pi_ppid = INVALID_PID;
 		pi_drop(my_pi->pi_pid);
 	}
-	
-
 
 	lock_release(pidlock);
 }
@@ -427,7 +424,7 @@ int
 pid_join(pid_t targetpid, int *status, int flags)
 {
 
-
+	
 	// Lock acquired
 	lock_acquire(pidlock);
 	
@@ -440,9 +437,9 @@ pid_join(pid_t targetpid, int *status, int flags)
 	// Get the pid info for the target pid
 	struct pidinfo *target_pid = pi_get(targetpid);
 
+
 	// ESRCH: No thread could be found corresponding to that specified by targetpid.
 	if(target_pid == NULL){
-
 		lock_release(pidlock);
 		return -ESRCH;
 	}
@@ -464,8 +461,8 @@ pid_join(pid_t targetpid, int *status, int flags)
 	if(target_pid->pi_exited == false){
 
 		// Then if flag raise WNOHANG then return 
-		if(flags != WNOHANG){
-			// *status = 0;
+		if(flags == WNOHANG){
+			*status = 0;
 			lock_release(pidlock);
 			return 0;	
 		}
@@ -482,13 +479,31 @@ pid_join(pid_t targetpid, int *status, int flags)
 	// TO-DO check exited is true or not !!!!!!!!!!!!!!!
 	if (status != NULL){
 		*status = target_pid->pi_exitstatus;
-	}else{
-		return -EFAULT;
 	}
 
-
+/*
+	else{
+		return -EFAULT;
+	}
+*/
 
 	lock_release(pidlock);
 	// Should return joined pid
 	return targetpid;
+}
+
+/*
+ * target_parent(pid_t targetpid) returns 1 if the target's parent is
+ * current thread, if not retuns 0
+ */
+int target_parent(pid_t targetpid, int parentpid){
+	lock_acquire(pidlock); 
+
+	struct pidinfo *target_pid = pi_get(targetpid);
+	if(target_pid->pi_ppid == parentpid){
+		lock_acquire(pidlock);
+		return 1;
+	}
+	lock_acquire(pidlock);
+	return 0;
 }

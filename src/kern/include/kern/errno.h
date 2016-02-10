@@ -107,6 +107,6 @@
 #define EMSGSIZE        63     /* Message too large */
 #define ENOTSUP         64     /* Threads operation not supported */
 #define EDEADLK			65		/* EDEADLK: The targetpid argument refers to the calling thread. */
-
+ 
 
 #endif /* _KERN_ERRNO_H_ */

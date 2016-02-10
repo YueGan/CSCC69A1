@@ -70,5 +70,6 @@ void pid_exit(int status, bool dodetach);
  */
 int pid_join(pid_t targetpid, int *status, int flags);
 
+int target_parent(pid_t targetpid, int parentpid);
 
 #endif /* _PID_H_ */

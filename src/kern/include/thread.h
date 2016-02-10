@@ -115,6 +115,7 @@ struct thread {
 	struct vnode *t_cwd;		/* current working directory */
 
 	/* add more here as needed */
+	 bool sig_flag;
 };
 
 /* Call once during system startup to allocate data structures. */
